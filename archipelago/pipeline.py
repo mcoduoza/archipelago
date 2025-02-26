@@ -138,7 +138,7 @@ def break_crit_path(graph, id_to_name, crit_path, placement, routes):
 
     reg_into_route(routes, break_node_source, new_reg_route_source)
     placement[new_reg_tile.tile_id] = (new_reg_tile.x, new_reg_tile.y)
-    id_to_name[new_reg_tile.tile_id] = f"pnr_pipelining{graph.added_regs}"
+    id_to_name[new_reg_tile.tile_id] = f"pnr_pipelining_{graph.added_regs}$T{track}_{dir_map[side]}"
 
     graph.update_sources_and_sinks()
     graph.update_edge_kernels()
@@ -188,7 +188,7 @@ def break_crit_path(graph, id_to_name, crit_path, placement, routes):
 
         reg_into_route(routes, break_node_source, new_reg_route_source)
         placement[new_reg_tile.tile_id] = (new_reg_tile.x, new_reg_tile.y)
-        id_to_name[new_reg_tile.tile_id] = f"pnr_pipelining{graph.added_regs}"
+        id_to_name[new_reg_tile.tile_id] = f"pnr_pipelining_{graph.added_regs}$T{track}_{dir_map[side]}"
 
         graph.update_sources_and_sinks()
         graph.update_edge_kernels()
